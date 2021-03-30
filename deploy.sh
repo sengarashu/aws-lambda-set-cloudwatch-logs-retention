@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # Change BUCKET_NAME to a bucket you own for use by CloudFormation
-BUCKET_NAME=_YOUR_S3_BUCKET
+#----- Change these parameters to suit your environment -----#
+BUCKET_NAME=<ADD-YOUR-TEMPLATE-BUCKET-NAME>
 STACK_NAME=lambda-set-cloudwatch-logs-retention
+AWS_PROFILE=<AWS-PROFILE_NAME>
 
 aws cloudformation package \
     --template-file template.yaml \
@@ -10,6 +12,7 @@ aws cloudformation package \
     --output-template-file packaged-template.yaml
 
 aws cloudformation deploy \
+    --profile "${AWS_PROFILE}" \
     --template-file packaged-template.yaml \
     --stack-name $STACK_NAME \
     --capabilities CAPABILITY_IAM
