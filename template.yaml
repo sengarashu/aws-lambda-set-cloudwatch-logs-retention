@@ -8,7 +8,7 @@ Resources:
     Properties:
       Description: 'For any Cloudwatch Log Group that does not already have a retention policy, add a 1-week policy to help save on log costs.'
       Handler: index.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs14.x
       CodeUri: ./src
       MemorySize: 128
       Timeout: 60
