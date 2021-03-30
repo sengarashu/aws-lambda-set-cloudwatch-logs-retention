@@ -3,7 +3,7 @@ const cloudwatchlogs = new AWS.CloudWatchLogs();
 
 const config = {
   debug:          false,                  // if true, print additional info to logs
-  defaultRetentionDays: 14                // allowed values are [1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653]
+  defaultRetentionDays: 30                // allowed values are [1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653]
 };
 
 //##############################################################################
